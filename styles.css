@@ -1,0 +1,247 @@
+/* Reseteo de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #1e1e1e;
+    color: #00FF00; /* Verde brillante estilo CMD */
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Menú lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    width: 200px;
+    height: 100%;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 255, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Botones del menú lateral */
+.menu-btn {
+    background-color: #444;
+    color: #00FF00;
+    padding: 15px 20px;
+    border: 2px solid #00FF00;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.menu-btn:hover {
+    background-color: #00FF00;
+    color: #1e1e1e;
+}
+
+/* Contenedor principal */
+.container {
+    margin-left: 220px; /* Espacio para el menú lateral */
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Títulos */
+h1 {
+    color: #00FF00;
+    font-size: 32px;
+    letter-spacing: 2px;
+    animation: blink 1s infinite;
+}
+
+/* Párrafos */
+p {
+    color: #A9A9A9;
+    font-size: 14px;
+}
+
+/* Grupos de formulario */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Estilo para las etiquetas */
+label {
+    font-size: 14px;
+    color: #00FF00;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilo para los campos de entrada */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #00FF00;
+    background-color: #222;
+    color: #00FF00;
+    border-radius: 5px;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* Estilo para los inputs de número */
+input[type="number"] {
+    width: 60%;
+    display: inline-block;
+}
+
+/* Estilo de los botones */
+.btn {
+    background-color: #1e1e1e;
+    color: #00FF00;
+    padding: 12px 24px;
+    border: 2px solid #00FF00;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #00FF00;
+    color: #1e1e1e;
+}
+
+/* Estilo para mostrar las tarjetas generadas */
+.card-display {
+    background-color: #1e1e1e;
+    color: #00FF00;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 2px solid #00FF00;
+}
+
+.card-display ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.card-display li {
+    font-size: 16px;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+}
+
+/* Estilo para el botón de copiar y limpiar */
+#copyAndClearButton {
+    background-color: #444;
+    border: 2px solid #00FF00;
+    margin-top: 20px;
+}
+
+#copyAndClearButton:hover {
+    background-color: #00FF00;
+    color: #1e1e1e;
+}
+
+/* Animación tipo terminal */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+h1 {
+    animation: blink 1s infinite;
+}
+
+/* Animación tipo terminal para los botones */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+
+
+
+/* Media Queries para hacer el diseño responsive */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 180px;
+    }
+
+    .container {
+        margin-left: 180px; /* Ajustamos el margen para pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-left: 0; /* Eliminar espacio para el menú en pantallas más pequeñas */
+        padding: 10px;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background: #333;
+        padding: 10px;
+        box-shadow: none;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .menu-btn {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    .btn {
+        width: 100%; /* Hacer los botones más grandes en pantallas pequeñas */
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .card-display {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 5px;
+    }
+}
